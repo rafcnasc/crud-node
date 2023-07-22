@@ -1,5 +1,5 @@
 const createCar = require('./create-car')
 
-module.export = {
+module.exports = {
     createCar
 }

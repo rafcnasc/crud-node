@@ -1,9 +1,16 @@
 const express = require('express')
 
+const database = require('../database')
+
 const route = express()
 
-route.post('/car', () => {
+route.post('/car', (req, res) => {
+    //obtem os daados do body da requisição
+    const car = req.body
+    //adiciona o carro no database
+    database.push(car)
 
+    return res.status(201).json(car)
 })
 
 module.exports = route
